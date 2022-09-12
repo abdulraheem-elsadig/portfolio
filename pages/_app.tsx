@@ -1,8 +1,17 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import type { AppProps } from "next/app";
+import { Fragment } from "react";
+import Navbar from "../components/Navbar";
+import Social from "../components/Social";
+import "../sass/main.scss";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <Fragment>
+      <Social />
+      <Navbar />
+      <Component {...pageProps} />
+    </Fragment>
+  );
 }
 
-export default MyApp
+export default MyApp;

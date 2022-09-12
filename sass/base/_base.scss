@@ -1,0 +1,94 @@
+//   General Project Setups
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+button {
+  background: none;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+}
+
+img,
+ion-icon,
+button,
+a {
+  display: block;
+}
+
+span {
+  display: inline-block;
+}
+
+html {
+  // Set Up Font Size
+  font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  scroll-behavior: smooth;
+
+  // Change Font Size Depending On Screen Width
+  @include respond(tab-land) {
+    // width < 1200?
+    font-size: 56.25%; //1 rem = 9px, 9/16 = 50%
+  }
+
+  @include respond(tab-port) {
+    // width < 900?
+    font-size: 50%; //1 rem = 8px, 8/16 = 50%
+  }
+
+  @include respond(big-desktop) {
+    font-size: 75%; //1rem = 12, 12/16
+  }
+  background-color: #313332;
+}
+
+body {
+  box-sizing: border-box;
+  margin-top: var(--header-hight);
+  @include respond(tab-port) {
+    padding: 0;
+  }
+
+  //   Scroll Bar Styles
+
+  &::-webkit-scrollbar {
+    width: 7px;
+  }
+  &::-webkit-scrollbar-track {
+    background: var(--bg-gray-light);
+    // border-left: 1px solid var(--cultured);
+  }
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(-70deg, #3bf0e4 0%, #bca1f7 100%);
+    border-radius: 7px;
+  }
+  body::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 70%);
+  }
+}
+
+//  Selected Text Styles
+::selection {
+  background-color: green;
+  color: $color-white;
+}

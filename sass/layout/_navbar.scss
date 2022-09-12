@@ -1,0 +1,90 @@
+.header {
+  width: 100%;
+  background-color: var(--bg-gray);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: 0.4s; // For animation dark mode
+}
+
+/*=============== NAV ===============*/
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: calc(var(--header-height) + 1.5rem);
+  // column-gap: 3rem;
+
+  &__toggle,
+  &__logo {
+    text-transform: uppercase;
+    font-weight: 800;
+    font-size: 2rem;
+    letter-spacing: -1px;
+    display: inline-flex;
+    align-items: center;
+    transition: 0.3s;
+    @include gradientText;
+  }
+
+  &__menu {
+    margin-left: auto;
+  }
+  &__list {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4rem;
+  }
+  &__link {
+    color: var(--title-color);
+    font-weight: var(--font-medium);
+    font-size: 1.6rem;
+    position: relative;
+    transition: all 0.2s;
+    &:after {
+      content: "";
+      transition: inherit;
+      @include gradient-background;
+      width: 0%;
+      height: 2.5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+
+    &:hover {
+      @include gradientText;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}
+
+/* Show menu */
+.show-menu {
+  right: 0;
+}
+
+/* Change background header */
+.scroll-header {
+  box-shadow: 0 1px 4px hsla(var(--hue), 4%, 15%, 0.1);
+}
+
+/* Active link */
+// .active-link {
+//   // position: relative;
+//   // color: var(--first-color);
+
+//   // &::after {
+//   //   content: "";
+//   //   position: absolute;
+//   //   bottom: -0.5rem;
+//   //   left: 0;
+//   //   width: 50%;
+//   //   height: 2px;
+//   //   background-color: var(--first-color);
+//   // }
+// }

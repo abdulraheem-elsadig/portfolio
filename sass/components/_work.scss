@@ -1,0 +1,53 @@
+.work {
+  &__table {
+    display: flex;
+    column-gap: 3rem;
+  }
+  &__table-select {
+    margin: 8rem 0;
+    display: inline-block;
+    padding-right: 3rem;
+    position: relative;
+    &:after {
+      content: "";
+      @include gradient-background;
+      width: 3px;
+      height: 100%;
+      display: inline-block;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+  &__table-description {
+    margin: 8rem 0;
+    font-size: 2rem;
+    max-width: 70%;
+  }
+  &__comp-name {
+    font-size: 3rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    &::after {
+      content: "";
+      transition: inherit;
+      @include gradient-background;
+      width: 0%;
+      height: 2.5px;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+
+    &--active {
+      @include gradientText;
+      transform: translateX(5px);
+      &::after {
+        width: 80%;
+      }
+    }
+  }
+}

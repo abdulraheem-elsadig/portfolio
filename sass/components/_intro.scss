@@ -1,0 +1,74 @@
+.intro {
+  height: calc(100vh - var(--header-hight));
+  padding: 7% 0rem;
+  @include flex-center;
+  justify-content: space-between;
+  align-items: flex-start;
+  &__sentance {
+    display: inline-flex;
+    align-items: center;
+  }
+  &__static-text {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 400;
+  }
+  &__text-list {
+    font-size: 5rem;
+    font-weight: 400;
+    margin-left: 15px;
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+  }
+  &__dynamic-text {
+    @include gradientText;
+    font-size: 5rem;
+    font-weight: 700;
+    position: relative;
+    top: 0;
+    animation: slide 15s steps(3) infinite;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+    &::before {
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: var(--bg-gray);
+      animation: typing 5s steps(10) infinite;
+    }
+    &::after {
+      width: 10px;
+      background: -webkit-linear-gradient(-70deg, #3bf0e4 0%, #bca1f7 100%);
+      animation: typing 5s steps(10) infinite, blink 800ms steps(10) infinite;
+      height: 55px;
+      margin: auto 0;
+    }
+  }
+
+  &__paragraph {
+    max-width: 45%;
+  }
+  &__button-container {
+    display: flex;
+    margin-top: 3rem;
+    column-gap: 5rem;
+  }
+  &__a {
+    font-size: 40rem;
+    text-align: center;
+    line-height: 100%;
+    transform: rotate(35deg);
+    text-shadow: 10px 8px #bca1f7;
+    @include gradient-apple-text;
+    animation: shake 12s infinite;
+  }
+}

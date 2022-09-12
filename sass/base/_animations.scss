@@ -1,0 +1,103 @@
+//  Animations On Scroll Effects
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+
+  80% {
+    transform: translateX(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+
+  80% {
+    transform: translateX(-1rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(3rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+//  Typing Effects Animations
+@keyframes slide {
+  100% {
+    top: -270px;
+  }
+}
+@keyframes typing {
+  0% {
+    left: 0;
+  }
+  30% {
+    left: 100%;
+  }
+  90% {
+    left: 100%;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes blink {
+  to {
+    background: transparent;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, -2px) rotate(34deg);
+  }
+  10% {
+    transform: translate(-1px, 2px) rotate(34deg);
+  }
+  20% {
+    transform: translate(1px, 2px) rotate(35deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(35deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(36deg);
+  }
+  50% {
+    transform: translate(-1px, -2px) rotate(34deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(35deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(34deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(36deg);
+  }
+  90% {
+    transform: translate(-3px, 0px) rotate(36deg);
+  }
+  100% {
+    transform: translate(1px, 1px) rotate(34deg);
+  }
+}

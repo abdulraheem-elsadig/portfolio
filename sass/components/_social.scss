@@ -1,0 +1,33 @@
+.social {
+  width: 40px;
+  position: fixed;
+  bottom: 50%;
+  transform: translateY(50%);
+  left: 5%;
+  right: auto;
+  z-index: 10;
+  @include flex-center;
+  flex-direction: column;
+  &::after,
+  &::before {
+    content: "";
+    height: 10vh;
+    width: 3px;
+    @include gradient-background;
+    display: block;
+    margin: 4rem 0;
+  }
+  &__item {
+    font-size: 3rem;
+    @include gradientText;
+    transition: all 0.2s;
+    line-height: 100%;
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+
+    &:hover {
+      transform: translateX(0.6rem);
+    }
+  }
+}

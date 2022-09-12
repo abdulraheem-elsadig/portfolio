@@ -1,0 +1,16 @@
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  line-height: 100%;
+  &__outline {
+    background: linear-gradient(var(--bg-gray), var(--bg-gray)) padding-box,
+      linear-gradient(-70deg, #3bf0e4 0%, #bca1f7 100%) border-box;
+    border: 4px solid transparent;
+    color: white;
+  }
+  &__solid {
+    @include gradient-background;
+    color: var(--bg-gray);
+    color: black;
+  }
+}

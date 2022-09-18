@@ -5,7 +5,10 @@
   top: 0;
   left: 0;
   z-index: 10;
-  transition: 0.4s; // For animation dark mode
+  transition: all 0.4s; // For animation dark mode
+  &__scrolled {
+    box-shadow: 1px 15px 15px -20px #000;
+  }
 }
 
 /*=============== NAV ===============*/

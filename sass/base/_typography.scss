@@ -1,5 +1,15 @@
+@font-face {
+  font-family: "sf-pro";
+  src: url("/fonts/FontsFree-Net-SFProText-Light-1.ttf");
+}
+@font-face {
+  font-family: "Estricta";
+  src: url("/fonts/FontsFree-Net-SFProText-Light-1.ttf");
+}
+
 body {
   font-family: "Oxanium", sans-serif;
+  // font-family: "sf-pro", sans-serif;
   font-weight: 400;
   line-height: 1.7;
   color: var(--font-gray);

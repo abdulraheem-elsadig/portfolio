@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 export default function Navbar() {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 70) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    });
+    return () => {};
+  }, []);
+
   return (
-    <header className="header" id="header">
+    <header
+      className={`header ${scrolled ? "header__scrolled" : ""}`}
+      id="header"
+    >
       <nav className="nav container">
         <a href="#" className="nav__logo">
           <i className="ri-leaf-line nav__logo-icon"></i> {"<A/>"}

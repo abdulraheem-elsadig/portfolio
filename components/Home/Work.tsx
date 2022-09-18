@@ -6,7 +6,7 @@ const compData = [
     compName: "Alpha Tech",
     job: "Front-end developer",
     description:
-      "         ipsum dolor sit, amet consectetur adipisicing elit. A optio minima voluptatibus laborum exercitationem voluptatem nesciunt, tempore illum? Fuga, rem.",
+      "Worked on Alpha Tech in a position of Front-end developer , responsible of making responsive and scaleable user interfaces using react and next js freamwork",
     dateStart: "july 2021",
     dateEnd: "july 2022",
   },
@@ -15,7 +15,7 @@ const compData = [
     compName: "Bsheer Group",
     job: "Mobile developer",
     description:
-      "        Lorem ipsum dolor sit, amet consectetur adipisicing elit. A optio minima voluptatibus laborum exercitationem voluptatem nesciunt, tempore illum? Fuga, rem.",
+      "Worked at BSHEER advertising in a position of Mobile Developer, responsible of building mobile apps for both IOS and Android devices using React Native fream work",
     dateStart: "june 2021",
     dateEnd: "september 2022",
   },

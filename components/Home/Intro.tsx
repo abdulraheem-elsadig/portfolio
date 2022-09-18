@@ -18,7 +18,10 @@ export default function Intro() {
             </li>
           </ul>
         </div>
-        <h1 className="intro__static-text">Developer</h1>
+        <h1 className="intro__static-text">
+          Developer
+          {/* That Will Bring Your Ideas to Life */}
+        </h1>
         <p className="intro__paragraph">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta quia
           harum nisi voluptates nulla obcaecati, a excepturi fugiat earum

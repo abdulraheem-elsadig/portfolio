@@ -82,6 +82,14 @@ ORDER: Base + typography > general layout + grid > page layout > components
 @mixin gradient-background {
   background: -webkit-linear-gradient(-70deg, #3bf0e4 0%, #bca1f7 100%);
 }
+@mixin gradient-hover-background {
+  background: -webkit-linear-gradient(
+    -70deg,
+    #3bf0e4 0%,
+    #3bf0e4 30%,
+    #bca1f7 100%
+  );
+}
 @mixin gradient-apple-text {
   background-image: linear-gradient(
     90deg,

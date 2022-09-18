@@ -1,9 +1,9 @@
 .intro {
   height: calc(100vh - var(--header-hight));
-  padding: 7% 0rem;
+  padding: 0% 0rem;
+  margin-top: -3rem;
   @include flex-center;
   justify-content: space-between;
-  align-items: flex-start;
   &__sentance {
     display: inline-flex;
     align-items: center;
@@ -12,6 +12,7 @@
     color: #fff;
     font-size: 5rem;
     font-weight: 400;
+    max-width: 70%;
   }
   &__text-list {
     font-size: 5rem;

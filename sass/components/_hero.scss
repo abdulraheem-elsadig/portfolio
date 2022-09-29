@@ -1,0 +1,65 @@
+.hero {
+  height: calc(100vh - var(--header-hight));
+  padding: 0% 0rem;
+  margin-top: -3rem;
+  @include flex-center;
+  justify-content: space-between;
+  position: relative;
+
+  &__static-text {
+    color: #fff;
+    font-size: 5rem;
+    font-weight: 600;
+  }
+  &__dynamic-text {
+    @include gradientText;
+    font-size: 5rem;
+    font-weight: 1000;
+    display: inline-block;
+    position: relative;
+    line-height: 100%;
+    margin-inline-start: 8px;
+
+    &::after {
+      width: 10px;
+      background: -webkit-linear-gradient(-70deg, #3bf0e4 0%, #bca1f7 100%);
+      animation: blink 800ms steps(10) infinite;
+      height: 5rem;
+      margin: auto 0;
+      margin-left: auto;
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%) translateX(2rem);
+      line-height: 100%;
+    }
+  }
+  &__paragraph {
+    font-size: 2.5rem;
+    max-width: 78%;
+    margin: 2rem 0;
+  }
+  &__button-container {
+    display: flex;
+    margin-top: 3rem;
+    column-gap: 5rem;
+  }
+  &__a {
+    font-size: 40rem;
+    text-align: center;
+    line-height: 100%;
+    transform: rotate(35deg);
+    text-shadow: 10px 8px #bca1f7;
+    @include gradient-apple-text;
+    animation: shake 12s infinite;
+  }
+}
+
+.bg-text {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 25rem;
+  font-weight: 1000;
+}

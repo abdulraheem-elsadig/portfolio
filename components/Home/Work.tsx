@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 const compData = [
   {
@@ -22,8 +22,19 @@ const compData = [
 ];
 export default function Work() {
   const [selectedJobIndex, setSelectedJobIndex] = useState(0);
+  const myRef = useRef();
+  const [myElementIsVisible, setMyElementIsVisible] = useState();
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      const entry = entries[0];
+      setMyElementIsVisible(entry.isIntersecting); //
+      console.log("entry", entry);
+    });
+    observer.observe(myRef.current);
+  }, []);
   return (
-    <div className="work container section">
+    <div ref={myRef} className="work container section">
       <div className="section__title-container">
         <span className="section__title">1. Work Experience</span>
         <span className="section__line" />

@@ -1,16 +1,15 @@
 .btn {
-  padding: 1.4rem 2rem;
+  padding: 1.8rem 2.5rem;
   border-radius: 0.1rem;
   line-height: 100%;
-  transition: all 0.2s;
   clip-path: polygon(10% 0, 100% 0, 100% 80%, 90% 100%, 0 100%, 0 20%);
   @include gradient-background;
-  font-weight: 600;
+  font-weight: 700;
+  font-size: 2rem;
+  transition: all 0.3s;
   &__outline {
-    transition: none;
     position: relative;
     span {
-      transition: all 0.2s;
       z-index: 2;
       @include gradientText;
     }
@@ -23,17 +22,9 @@
       position: absolute;
       z-index: 1;
     }
-    // &:hover {
-    //   transform: rotate(-8deg);
-    //   span {
-    //     transform: rotate(8deg);
-    //     font-size: 18px;
-    //   }
-    // }
   }
   &__solid {
     color: var(--bg-gray);
-    transition: all 0.2s;
     position: relative;
 
     &:hover {
@@ -53,5 +44,8 @@
         transform: translateY(0);
       }
     }
+  }
+  &:hover {
+    transform: translateY(5px);
   }
 }

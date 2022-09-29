@@ -28,3 +28,21 @@
 .main {
   overflow: hidden; // For animation
 }
+
+.bg-text-l,
+.bg-text-r {
+  font-size: 40rem;
+  font-weight: 1000;
+  position: absolute;
+  z-index: -1;
+  opacity: 0.04;
+  bottom: -20%;
+  line-height: 100%;
+}
+
+.bg-text-l {
+  left: -20%;
+}
+.bg-text-r {
+  right: -20%;
+}

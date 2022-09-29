@@ -58,6 +58,7 @@ export default function Work() {
           {compData[selectedJobIndex].description}
         </p>
       </div>
+      <div className="bg-text-r">WORK</div>
     </div>
   );
 }

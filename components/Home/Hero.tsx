@@ -51,9 +51,9 @@ export default function Hero() {
   return (
     <div className="hero container">
       <div className="cotainer">
-        <span className="hero__static-text">Hello,</span>
+        <span className="hero__static-text">Hi, I'm Abdulraheem</span>
         <br />
-        <span className="hero__static-text">Iam</span>
+        <span className="hero__static-text">A</span>
         <span className="hero__dynamic-text" id="text"></span>
         <br />
         <span className="hero__paragraph">
@@ -70,6 +70,7 @@ export default function Hero() {
         </div>
       </div>
       <h1 className="hero__a">A</h1>
+      <span className="bg-text-l">{`</>`}</span>
     </div>
   );
 }

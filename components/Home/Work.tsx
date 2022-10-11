@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import useObserver from "../../hooks/useObserver";
 import useScroll from "../../hooks/useScroll";
 
 const compData = [
@@ -24,25 +25,23 @@ const compData = [
 export default function Work() {
   const [selectedJobIndex, setSelectedJobIndex] = useState(0);
   const myRef = useRef();
+  const tableRef = useRef();
+
   const [myElementIsVisible, setMyElementIsVisible] = useState();
   const scrollY = useScroll();
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      const entry = entries[0];
-      setMyElementIsVisible(entry.isIntersecting); //
-      console.log("entry", entry);
-    });
-    observer.observe(myRef.current);
-  }, []);
+  const isTableVisible = useObserver(tableRef);
+
   return (
-    <section ref={myRef} className="section">
+    <section ref={myRef} className="section" id="work">
       <div className="work container">
-        {scrollY}
         <div className="section__title-container">
           <span className="section__title">1. Work Experience</span>
           <span className="section__line" />
         </div>
-        <div className="work__table">
+        <div
+          ref={tableRef}
+          className={`work__table ${isTableVisible ? "show" : ""}`}
+        >
           <ul className="work__table-select">
             {compData.map((item, index) => (
               <li

@@ -53,7 +53,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="hero">
+    <div className="hero" id="home">
       <div className="container">
         <span className="hero__static-text">{`Hi, I'm ${t("devname")}`}</span>
         <br />
@@ -74,7 +74,12 @@ export default function Hero() {
         </div>
       </div>
       {/* <h1 className="hero__a">A</h1> */}
-      <img src="/assets/hand.png" alt="" className="hero__image" />
+      <img
+        src="/assets/hand.png"
+        alt=""
+        className="hero__image"
+        style={{ transform: `translateX(${scrollY}px)` }}
+      />
       <span
         className="bg-text-l"
         style={{ transform: `translateX(-${scrollY}px)` }}

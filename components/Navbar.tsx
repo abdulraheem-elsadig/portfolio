@@ -32,8 +32,8 @@ export default function Navbar() {
               </a>
             </li>
             <li className="nav__item">
-              <a href="#about" className="nav__link">
-                About
+              <a href="#work" className="nav__link">
+                Work
               </a>
             </li>
             <li className="nav__item">

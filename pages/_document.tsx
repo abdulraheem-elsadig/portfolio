@@ -43,7 +43,10 @@ export default class CustomDocument extends Document {
             href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&family=Oxanium:wght@300;400;500;600;700&display=swap"
             rel="stylesheet"
           ></link>
-
+          <link
+            href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600&display=swap"
+            rel="stylesheet"
+          ></link>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link
             href="https://fonts.googleapis.com/css2?family=Jura:wght@400;700&family=Orbitron:wght@400;500;600;700;800&display=swap"

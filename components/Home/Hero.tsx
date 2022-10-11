@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
+import useTranslation from "next-translate/useTranslation";
+import useScroll from "../../hooks/useScroll";
 
 export default function Hero() {
+  const { t, lang } = useTranslation("common");
+  const scrollY = useScroll();
   useEffect(() => {
     const textDisplay: any = document.getElementById("text");
     const phrases: string[] = ["Fullstack Developer.", "Mobile Developer."];
@@ -49,9 +53,9 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="hero container">
-      <div className="cotainer">
-        <span className="hero__static-text">Hi, I'm Abdulraheem</span>
+    <div className="hero">
+      <div className="container">
+        <span className="hero__static-text">{`Hi, I'm ${t("devname")}`}</span>
         <br />
         <span className="hero__static-text">A</span>
         <span className="hero__dynamic-text" id="text"></span>
@@ -69,8 +73,12 @@ export default function Hero() {
           </button>
         </div>
       </div>
-      <h1 className="hero__a">A</h1>
-      <span className="bg-text-l">{`</>`}</span>
+      {/* <h1 className="hero__a">A</h1> */}
+      <img src="/assets/hand.png" alt="" className="hero__image" />
+      <span
+        className="bg-text-l"
+        style={{ transform: `translateX(-${scrollY}px)` }}
+      >{`</>`}</span>
     </div>
   );
 }

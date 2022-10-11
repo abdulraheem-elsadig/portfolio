@@ -5,7 +5,10 @@
   @include flex-center;
   justify-content: space-between;
   position: relative;
-
+  &__image {
+    position: absolute;
+    right: 0;
+  }
   &__static-text {
     color: #fff;
     font-size: 5rem;
@@ -37,7 +40,7 @@
   }
   &__paragraph {
     font-size: 2.5rem;
-    max-width: 78%;
+    max-width: 50%;
     margin: 2rem 0;
   }
   &__button-container {

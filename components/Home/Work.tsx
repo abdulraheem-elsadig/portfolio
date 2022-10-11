@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import useScroll from "../../hooks/useScroll";
 
 const compData = [
   {
@@ -24,7 +25,7 @@ export default function Work() {
   const [selectedJobIndex, setSelectedJobIndex] = useState(0);
   const myRef = useRef();
   const [myElementIsVisible, setMyElementIsVisible] = useState();
-
+  const scrollY = useScroll();
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       const entry = entries[0];
@@ -34,31 +35,39 @@ export default function Work() {
     observer.observe(myRef.current);
   }, []);
   return (
-    <div ref={myRef} className="work container section">
-      <div className="section__title-container">
-        <span className="section__title">1. Work Experience</span>
-        <span className="section__line" />
-      </div>
-      <div className="work__table">
-        <ul className="work__table-select">
-          {compData.map((item, index) => (
-            <li
-              className={`work__comp-name ${
-                selectedJobIndex == index ? "work__comp-name--active" : ""
-              }`}
-              key={index}
-              onClick={() => setSelectedJobIndex(index)}
-            >
-              <span>{item.compName}</span>
-            </li>
-          ))}
-        </ul>
+    <section ref={myRef} className="section">
+      <div className="work container">
+        {scrollY}
+        <div className="section__title-container">
+          <span className="section__title">1. Work Experience</span>
+          <span className="section__line" />
+        </div>
+        <div className="work__table">
+          <ul className="work__table-select">
+            {compData.map((item, index) => (
+              <li
+                className={`work__comp-name ${
+                  selectedJobIndex == index ? "work__comp-name--active" : ""
+                }`}
+                key={index}
+                onClick={() => setSelectedJobIndex(index)}
+              >
+                <span>{item.compName}</span>
+              </li>
+            ))}
+          </ul>
 
-        <p className="work__table-description">
-          {compData[selectedJobIndex].description}
-        </p>
+          <p className="work__table-description">
+            {compData[selectedJobIndex].description}
+          </p>
+        </div>
       </div>
-      <div className="bg-text-r">WORK</div>
-    </div>
+      <div
+        className="bg-text-r"
+        style={{ transform: `translateX(calc(100vh - ${scrollY}px))` }}
+      >
+        WORK
+      </div>
+    </section>
   );
 }

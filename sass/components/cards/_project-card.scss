@@ -1,18 +1,36 @@
 .project-card {
-  position: relative;
   padding-left: 2rem;
   display: flex;
   justify-content: space-between;
   margin-bottom: 4rem;
   background-color: var(--bg-gray-light);
   border-radius: 5px;
-  overflow: hidden;
+  width: 100%;
+  clip-path: polygon(
+    100% 0,
+    100% calc(100% - 5rem),
+    calc(100% - 5rem) 100%,
+    0 100%,
+    0 0
+  );
+  position: relative;
+  &__before-shape {
+    width: 2.5rem;
+    height: 100%;
+    display: inline-block;
+    @include gradient-background;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 50% 15rem, 0 5rem);
+    border-radius: 2px;
+  }
   &__text-container {
     padding: 2rem;
   }
   &__image {
-    width: 8rem;
-    border-radius: 5px;
+    // width: 8rem;
+    // border-radius: 5px;
+    position: absolute;
+    // left: 0;
+    // top: -200px;
   }
   &__title {
     font-size: 3rem;
@@ -30,13 +48,12 @@
     font-weight: 600;
     text-transform: capitalize;
   }
-  &::before {
-    content: "";
-    position: absolute;
-    width: 0.8rem;
-    left: 0;
-    height: 100%;
-    @include gradient-background;
-    display: block;
-  }
 }
+
+// .before {
+//   width: 2.5rem;
+//   height: 100%;
+//   @include gradient-background;
+//   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 50% 15rem, 0 5rem);
+//   border-radius: 2px;
+// }

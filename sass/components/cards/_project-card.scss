@@ -7,13 +7,18 @@
   border-radius: 5px;
   width: 100%;
   clip-path: polygon(
+    5rem 0%,
     100% 0,
     100% calc(100% - 5rem),
     calc(100% - 5rem) 100%,
     0 100%,
-    0 0
+    0 5rem
   );
   position: relative;
+  opacity: 0;
+  visibility: none;
+  transform: translateX(-4rem);
+  transition: all 0.4s 0.1s;
   &__before-shape {
     width: 2.5rem;
     height: 100%;
@@ -26,17 +31,23 @@
     padding: 2rem;
   }
   &__image {
-    // width: 8rem;
-    // border-radius: 5px;
+    width: 8rem;
+    border-radius: 5px;
     position: absolute;
-    // left: 0;
+    right: 0;
     // top: -200px;
   }
   &__title {
     font-size: 3rem;
+    opacity: 0;
+    transform: translateY(-5rem);
+    transition: all 0.6s 0.4s;
   }
   &__description {
     font-size: 1.8rem;
+    opacity: 0;
+    transform: translateY(-6rem);
+    transition: all 0.6s 0.8s;
   }
   &__tags-list {
     display: flex;
@@ -57,3 +68,7 @@
 //   clip-path: polygon(0 0, 100% 0, 100% 100%, 50% 100%, 50% 15rem, 0 5rem);
 //   border-radius: 2px;
 // }
+.show {
+  opacity: 1;
+  transform: translateX(0) translateY(0);
+}
